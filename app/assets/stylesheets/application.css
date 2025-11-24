@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+.main {
+  margin: 0, auto;
+  height: 100vh;
+}
+
+.main * {
+  margin: 0.25rem;
+}
+
+ul {
+  list-style-type: none; /* Removes the default bullets */
+  padding-left: 0;       /* Optional: remove default indentation */
+  margin-left: 0;        /* Optional: remove default margin */
+}

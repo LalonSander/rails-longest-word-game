@@ -1,0 +1,19 @@
+<div class="main d-flex flex-column justify-content-center align-items-center">
+  <div class="col-4 text-center">
+    <h1>Welcome to The Longest Word</h1>
+    <h2>These are your letters</h2>
+  </div>
+  <div class="d-flex flex-wrap justify-content-center col-4">
+    <%  @letters.each do |letter|%>
+      <button class="btn btn-primary rounded col-2" disabled><h3><%= letter.upcase %></h3></button>
+    <%  end %>
+  </div>
+
+  <form class="col-4 text-center" action="/score" data-controller="word">
+    <label for="word">Enter your guess</label>
+    <input data-word-target="input" data-action= "input->word#validate" class="form-control" id="word" name="word" autocomplete="off">
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div data-word-target="feedback" class="mt-2 text-secondary"></div>
+    <input data-word-target="button" class="btn btn-primary" type="submit" value="Guess!" disabled>
+  </form>
+</div>
